@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import * as React from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import MyTabs from './screens/MyTabs';
 
-export default function App() {
+// const Tab = createBottomTabNavigator();
+
+// export default function App() {
+//   return (
+//     <NavigationContainer>
+//       <MyTabs />
+//     </NavigationContainer>
+//   );
+// }
+
+import React from "react";
+// import { View, StyleSheet } from "react-native";
+// import Profile from "./screens/Profile";
+// import Action from './screens/Action';
+// import Favorite from "./screens/GetStarted";
+import StackNavigatorPage from "./screens/StackNavigatorPage";
+import {ThemeProvider} from "./screens/Themecontexts";
+import ProfileTwo from "./screens/ProfileTwo";
+import Profile from "./screens/Profile";
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider>
+      {/* <NavigationContainer>
+        <StackNavigatorPage />
+      </NavigationContainer> */}
+      {/* <ProfileTwo /> */}
+      <Profile />
+     </ThemeProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
